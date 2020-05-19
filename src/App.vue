@@ -1,17 +1,26 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <el-container id="app">
+    <el-aside width="240px">
+      <LeftNavMenu id="leftNavMenu"></LeftNavMenu>
+    </el-aside>
+    <Main></Main>
+    <el-aside width="240px">
+      <RightNavMenu id="rightNavMenu"></RightNavMenu>
+    </el-aside>
+  </el-container>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import LeftNavMenu from "@/components/mainPage/leftNavMenu"
+import Main from "@/components/mainPage/main";
+import RightNavMenu from "@/components/mainPage/rightNavMenu"
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Main,
+    LeftNavMenu,
+    RightNavMenu
   }
 }
 </script>
@@ -23,6 +32,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
 }
+#leftNavMenu {
+  position:  fixed;
+  left: 0px;
+  top: 0px;
+}
+  #rightNavMenu {
+    position:  fixed;
+    top: 0px;
+  }
 </style>
